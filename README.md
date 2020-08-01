@@ -10,5 +10,6 @@ Initial:
 How to run
 ==============
 * `python3 app.py`
+* `In the browser go to http://127.0.0.1:5000/home`
 
 
