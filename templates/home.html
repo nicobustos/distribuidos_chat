@@ -6,9 +6,9 @@
         <div class="text-center">
             <form method="POST" action="{{url_for('open_chat')}}">
                 <br>Nombre de usuario<br>
-                <input name="name" required type="text" placeholder="Nombre">
+                <input name="name" required type="text">
                 <br>Channel<br>
-                <input name="channel" required type="number" placeholder="channel">
+                <input name="channel" min="1" pattern="^[0-9]+"required type="number">
                 <br><br>
                 <input type="submit" value="Ingresar">
             </form>
