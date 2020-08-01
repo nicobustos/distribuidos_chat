@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-	<div id="app" class="container">
+	<div id="app" class="container py-4 pt-4 pr-4 pl-4">
 	    <section class="messages">
 	        <div v-for="message in messages" class="box">
 	            <article class="media">
@@ -25,10 +26,10 @@
 	    </section>
 	    <section class="new-message">
 	        <div class="field has-addons">
-	            <div class="control is-expanded">
+	            <div class="control is-expanded  ml-2">
 	                <input v-model="newMessage" @keypress.enter="sendMessage" class="input" type="text" placeholder="Escribe un mensaje...">
 	            </div>
-	            <div class="control">
+	            <div class="control  mr-2">
 	                <button @click="sendMessage" class="button is-info">Enviar</button>
 	            </div>
 	        </div>
