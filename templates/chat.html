@@ -19,7 +19,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body style="height:1500px">
+<body style="height:100%" class="bg-secondary" background="static/images/fondo.jpg">
 	<div id="app" class="container py-4 pt-4 pr-4 pl-4" style="margin-top:27px">
 
  	<nav class="navbar navbar-default navbar-fixed-top">
@@ -37,14 +37,18 @@
 		  </div>
 		</nav> 
 
-		 
-		<div class="row my-5">
+		<div class="row justify-content-center">
+			<div class="col-10 my-5 text-center box">
+				<span class="text-secondary">Envíale un saludo a todos los miembros de la sala.</span>
+			</div>
+		</div> 
+		<div class="row mb-5">
 			<div class="col">
 	    <section class="messages">
 
 	    	<div v-for="message in messages" >
     			<div v-if="message.username == username">
-	        		<div class="row">
+	        		<div class="row mt-2">
 						<div class="col-6">
 	        			</div>
     					<div class="col-6 box mt-2 bg-success">
@@ -65,7 +69,7 @@
 	        	</div>
 
 	        	<div v-else>
-	        		<div class="row">
+	        		<div class="row mt-2">
     					<div class="col-6 box mt-2 bg-info">
 	            			<article class="media">
 
@@ -88,11 +92,13 @@
 	    </section>
 	    </div>
 		</div>
-
+		<div class="row mb-5">
+			
+		</div>
 		<div class="row">
 			<div class="col">
 
-	    	<section class="new-message mr-2 ml-2">
+	    	<section class="new-message mr-2 ml-2 box bg-secondary">
 	        <div class="field has-addons">
 	            <div class="control is-expanded">
 	                <input v-model="newMessage" @keypress.enter="sendMessage" class="input" type="text" placeholder="Escribe un mensaje...">
