@@ -9,10 +9,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="http://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" rel="stylesheet"/>
+    <link href="http://unpkg.com/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="http://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="http://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-	<div id="app" class="container py-4 pt-4 pr-4 pl-4">
+<body style="height:1500px">
+	<div id="app" class="container py-4 pt-4 pr-4 pl-4" style="margin-top:27px">
+
+ 	<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="row">
+		    	<lu><div class="col"><h4> Bienvenido <strong>[[ username]]</strong>, estás en la sala número "[[channel]]" </h4></div></lu>
+		    	<lu><div class="col">
+		    		<h4>
+		    			<button @click="sendMessage" class="button is-danger" title="Salir"><i class="fas fa-sign-out-alt fa-2x"></i></button>
+		    		</h4>
+		    	</div>
+		    </lu>
+		    </div>
+		   
+		  </div>
+		</nav> 
+
+		 
 		<div class="row my-5">
 			<div class="col">
 	    <section class="messages">
