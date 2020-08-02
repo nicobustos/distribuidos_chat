@@ -8,32 +8,91 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
 	<div id="app" class="container py-4 pt-4 pr-4 pl-4">
+		<div class="row my-5">
+			<div class="col">
+				
+			
+
 	    <section class="messages">
-	        <div v-for="message in messages" class="box">
-	            <article class="media">
-	                <div class="media-content">
-	                    <div class="content">
-	                    	<p><strong>@[[ message.username ]]</strong></p>
-	                        <p>[[ message.text ]]</p>
-	                    </div>
-	                </div>
-	            </article>
-	        </div>
+	    	<div v-for="message in messages" >
+	    	
+    			
+	        		
+	        	
+    			<div v-if="message.username == username">		
+	        		<div class="row">
+    					<div class="col-6 box mt-2 bg-success">
+	            			<article class="media">
+
+	                			<div class="media-content">
+	                   				<div class="content">
+	                    	
+	                        
+	                        			<div class="row">
+	                        				<div class="col">
+	                        					<p><strong class=" text-white">[[ message.username ]]</strong> dice:</p>
+	                        					<strong><p class=" text-white">[[ message.text ]]</p>	</strong>
+	                        				</div>
+	                        			</div>							
+	                   				 </div>
+	                			</div>
+	           				</article>
+	            		</div>
+	        		</div>
+	        	</div>
+
+	        	<div v-else>		
+	        		<div class="row">
+	        			<div class="col-6">
+	        				
+	        			</div>
+    					<div class="col-6 box mt-2 bg-info">
+	            			<article class="media">
+
+	                			<div class="media-content">
+	                   				<div class="content">
+	                    	
+	                        
+	                        			<div class="row">
+	                        				<div class="col">
+	                        					<p><strong class=" text-white">[[ message.username ]]</strong> dice:</p>
+	                        					<strong><p class=" text-white">[[ message.text ]]</p></strong>	
+	                        				</div>
+	                        			</div>							
+	                   				 </div>
+	                			</div>
+	           				</article>
+	            		</div>
+	        		</div>
+	        	</div>
+	    	</div>
+
 	    </section>
-	    <section class="new-message">
+	    </div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				
+			
+	    	<section class="new-message mr-2 ml-2">
 	        <div class="field has-addons">
-	            <div class="control is-expanded  ml-2">
+	            <div class="control is-expanded">
 	                <input v-model="newMessage" @keypress.enter="sendMessage" class="input" type="text" placeholder="Escribe un mensaje...">
 	            </div>
-	            <div class="control  mr-2">
-	                <button @click="sendMessage" class="button is-info">Enviar</button>
+	            <div class="control">
+	                <button @click="sendMessage" class="button is-info"><i class="fas fa-share"></i></button>
 	            </div>
 	        </div>
 	    </section>
+	    </div>
+		</div>
+
     </div>
     <script src="{{ url_for('static', filename='js/vendor/socket.io.slim.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/vue.min.js') }}"></script>
@@ -83,6 +142,7 @@
 		    app.$set(app, 'messages', my_messages);
 		});
     </script>
+    
 </body>
 
 </html>
