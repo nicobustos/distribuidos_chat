@@ -15,55 +15,43 @@
 	<div id="app" class="container py-4 pt-4 pr-4 pl-4">
 		<div class="row my-5">
 			<div class="col">
-				
-			
-
 	    <section class="messages">
+
 	    	<div v-for="message in messages" >
-	    	
-    			
-	        		
-	        	
-    			<div v-if="message.username == username">		
+    			<div v-if="message.username == username">
 	        		<div class="row">
     					<div class="col-6 box mt-2 bg-success">
 	            			<article class="media">
-
 	                			<div class="media-content">
 	                   				<div class="content">
-	                    	
-	                        
 	                        			<div class="row">
 	                        				<div class="col">
-	                        					<p><strong class=" text-white">[[ message.username ]]</strong> dice:</p>
 	                        					<strong><p class=" text-white">[[ message.text ]]</p>	</strong>
 	                        				</div>
-	                        			</div>							
+	                        			</div>
 	                   				 </div>
 	                			</div>
-	           				</article>
+							</article>
+
 	            		</div>
 	        		</div>
 	        	</div>
 
-	        	<div v-else>		
+	        	<div v-else>
 	        		<div class="row">
 	        			<div class="col-6">
-	        				
 	        			</div>
     					<div class="col-6 box mt-2 bg-info">
 	            			<article class="media">
 
 	                			<div class="media-content">
 	                   				<div class="content">
-	                    	
-	                        
 	                        			<div class="row">
 	                        				<div class="col">
 	                        					<p><strong class=" text-white">[[ message.username ]]</strong> dice:</p>
-	                        					<strong><p class=" text-white">[[ message.text ]]</p></strong>	
+	                        					<strong><p class=" text-white">[[ message.text ]]</p></strong>
 	                        				</div>
-	                        			</div>							
+	                        			</div>
 	                   				 </div>
 	                			</div>
 	           				</article>
@@ -78,8 +66,7 @@
 
 		<div class="row">
 			<div class="col">
-				
-			
+
 	    	<section class="new-message mr-2 ml-2">
 	        <div class="field has-addons">
 	            <div class="control is-expanded">
@@ -142,7 +129,6 @@
 		    app.$set(app, 'messages', my_messages);
 		});
     </script>
-    
 </body>
 
 </html>
